@@ -1,7 +1,9 @@
 package com.Automation.HybridFramework.Base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -23,10 +25,16 @@ public class TestBase {
 			
 			pro = new Properties();
 
-			FileInputStream fis
- = new FileInputStream("E:\\NewLocation\\HybridFramework\\src\\main\\java\\com\\Automation\\HybridFramework\\Config\\config.properties");
+		/*	FileInputStream fis
+ = new FileInputStream(System.getProperty("user.dir")+"com\\Automation\\HybridFramework\\Config\\config.properties");
 			pro.load(fis);
-
+*/
+			
+			File f = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\Automation\\HybridFramework\\Config\\config.properties");
+			
+			FileReader fr = new FileReader(f);
+			
+			pro.load(fr);
 			
 		} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block

@@ -1,5 +1,6 @@
 package com.Automation.HybridFramework.Testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -30,5 +31,16 @@ public class LoginTest extends TestBase{
 	public void LoginTest() throws InterruptedException {
 		
 		login.loginToapplication();
+		
+		String title = login.validatetitle();
+		
+		System.out.println(title);
+		
+		Assert.assertEquals(title,
+				"Online Shopping Site for Mobiles, Fashion, Books, Electronics, Home Appliances and More");
+		
+		
+		
+		
 	}
 }

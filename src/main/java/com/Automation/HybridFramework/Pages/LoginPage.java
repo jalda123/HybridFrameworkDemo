@@ -21,7 +21,7 @@ public class LoginPage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void loginToapplication() throws InterruptedException {
+	public HomePage loginToapplication() throws InterruptedException {
 		
 		email.sendKeys(pro.getProperty("user"));
 		
@@ -33,6 +33,16 @@ public class LoginPage extends TestBase{
 
 		
 		loginbtn.click();
+		
+		return new HomePage();
 	}
+	
+	public String validatetitle() {
+		
+		return driver.getTitle();
+	}
+	
+	
+	
 
 }
